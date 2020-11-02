@@ -12,3 +12,11 @@ The program should display the factored form in an Entry widget.
 Extension: make the + between a,b and b,c buttons that will toggle
 between + and -.
 """
+import tkinter as tk
+from tkinter import * 
+
+window = tk.Tk()
+
+
+
+window.mainloop()

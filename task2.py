@@ -14,9 +14,43 @@ between + and -.
 """
 import tkinter as tk
 from tkinter import * 
+import math
 
-window = tk.Tk()
+win = tk.Tk()
+
+eoutput = StringVar()
+eoutput.set("Output goes here")
+
+def clickFunction():
+    num1 = e1.get()
+    num2 = e2.get()
+    num1 = float(num1)
+    num2 = float(num2)
+
+    x1 = (-num1 + math.sqrt((num1 ** 2) - 4 * 1 * num2)) / (2 * 1)
+    x2 = (-num1 - math.sqrt((num1 ** 2) - 4 * 1 * num2)) / (2 * 1)
+    quadAnswer = [x1,x2]
+    quadAnswer.sort()
+
+    eoutput.set(str(resultvar1.get())+str(resultvar2.get()))
 
 
+l1 = Label(win, text="ax^2 + bx + c")
+l2 =  Label(win, text="Enter in coefficients b and c")
+l3 = Label(win, text="Entry b")
+e1 = Entry(win)
+l4 = Label(win, text="Entry c")
+e2 = Entry(win)
+b1 = Button(win, text="Click to see output", command=clickFunction)
+a_entry1 = Entry(win, width=70, textvariable=eoutput)
 
-window.mainloop()
+l1.pack()
+l2.pack()
+l3.pack()
+e1.pack()
+l4.pack()
+e2.pack()
+b1.pack()
+a_entry1.pack()
+
+win.mainloop()
